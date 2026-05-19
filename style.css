@@ -1,9 +1,9 @@
 :root {
     --color-bg: #F5F2EC;
-    --color-text: #1C1C1C;
-    --color-accent: #C5A880;
+    --color-text: #1A1812;
+    --color-accent: #B89A6A;
     --color-white: #FFFFFF;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Inter', sans-serif;
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -50,10 +50,11 @@ body {
 
 .logo {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 6px;
     color: var(--color-text);
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -124,17 +125,19 @@ body {
 
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 5rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
+    font-size: 6.5rem;
+    font-weight: 300;
+    margin-bottom: 1.8rem;
+    line-height: 1.0;
+    letter-spacing: -1px;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
-    opacity: 0.9;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
 }
 
 .btn {
@@ -159,10 +162,17 @@ body {
 /* Typography & Sections */
 .section-title {
     font-family: var(--font-heading);
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 400;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.15;
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--color-accent);
 }
 
 .section-subtitle {
@@ -225,9 +235,11 @@ body {
 
 .card-body h3 {
     font-family: var(--font-heading);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--color-text);
 }
 
 .card-body p {
@@ -245,9 +257,11 @@ footer {
 
 .footer-logo {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.2rem;
+    font-weight: 300;
     margin-bottom: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
 }
 
 footer p {
@@ -274,6 +288,7 @@ footer p {
 
 @media (max-width: 768px) {
     .grid { grid-template-columns: 1fr; }
-    .hero-content h1 { font-size: 3.5rem; }
+    .hero-content h1 { font-size: 4rem; }
+    .section-title { font-size: 2.8rem; }
     .nav-links { display: none; }
 }
