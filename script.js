@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Hero zoom-out on load
+    // ── Hero zoom-out on load ──────────────────────────
     setTimeout(() => {
         document.querySelector('.hero').classList.add('loaded');
     }, 100);
 
-    // Navbar: scrolled state
+    // ── Navbar scrolled state ─────────────────────────
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
-    // Intersection Observer — reveal cards and philosophy on scroll
-    const revealEls = document.querySelectorAll('.card, .philosophy-inner, .philosophy-stats, .section-header');
-
+    // ── Scroll reveal ─────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -21,18 +19,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    revealEls.forEach((el, i) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(36px)';
-        el.style.transition = `opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.1}s, transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.1}s`;
+    // Stagger card reveals
+    document.querySelectorAll('.card').forEach((card, i) => {
+        card.style.transitionDelay = `${i * 0.1}s`;
+        observer.observe(card);
+    });
+
+    // Other reveal elements
+    document.querySelectorAll('.philosophy-inner, .manifesto-inner, .contact-inner, .section-header').forEach(el => {
         observer.observe(el);
     });
 
-    // When revealed class is added, animate in
-    const styleTag = document.createElement('style');
-    styleTag.textContent = `.revealed { opacity: 1 !important; transform: translateY(0) !important; }`;
-    document.head.appendChild(styleTag);
+    // ── Pause marquee on hover ────────────────────────
+    const marquee = document.querySelector('.marquee-track');
+    if (marquee) {
+        marquee.addEventListener('mouseenter', () => marquee.style.animationPlayState = 'paused');
+        marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
+    }
 
 });
+
+// ── Newsletter form ───────────────────────────────────
+function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    const original = btn.textContent;
+    btn.textContent = 'Gracias ✦';
+    btn.style.background = 'var(--gold)';
+    btn.disabled = true;
+    setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+    }, 3000);
+}

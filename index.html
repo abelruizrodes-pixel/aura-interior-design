@@ -18,10 +18,10 @@
             <a href="#inspiracion" class="nav-link">Inspiración</a>
             <a href="#nosotros" class="nav-link">Filosofía</a>
         </div>
-        <div class="logo">AURA</div>
+        <a href="#" class="logo">AURA</a>
         <div class="nav-right">
             <a href="#estilos" class="nav-link">Espacios</a>
-            <a href="#estilos" class="nav-cta">Descubrir</a>
+            <a href="#contacto" class="nav-cta">Contacto</a>
         </div>
     </nav>
 
@@ -68,6 +68,26 @@
         </div>
     </section>
 
+    <!-- Marquee / Brand strip -->
+    <div class="marquee-strip" aria-hidden="true">
+        <div class="marquee-track">
+            <span>Architectural Digest</span><span class="marquee-dot">·</span>
+            <span>Elle Decor</span><span class="marquee-dot">·</span>
+            <span>Wallpaper*</span><span class="marquee-dot">·</span>
+            <span>AD100</span><span class="marquee-dot">·</span>
+            <span>House &amp; Garden</span><span class="marquee-dot">·</span>
+            <span>Interior Design</span><span class="marquee-dot">·</span>
+            <span>Dezeen</span><span class="marquee-dot">·</span>
+            <span>Architectural Digest</span><span class="marquee-dot">·</span>
+            <span>Elle Decor</span><span class="marquee-dot">·</span>
+            <span>Wallpaper*</span><span class="marquee-dot">·</span>
+            <span>AD100</span><span class="marquee-dot">·</span>
+            <span>House &amp; Garden</span><span class="marquee-dot">·</span>
+            <span>Interior Design</span><span class="marquee-dot">·</span>
+            <span>Dezeen</span><span class="marquee-dot">·</span>
+        </div>
+    </div>
+
     <!-- Styles / Cards -->
     <section class="styles" id="estilos">
         <div class="container">
@@ -77,8 +97,20 @@
             </div>
             <div class="grid">
 
-                <article class="card">
+                <article class="card reveal">
                     <div class="card-number">01</div>
+                    <div class="card-img-wrapper">
+                        <img src="images/livingroom.png" alt="Sala de estar de diseño de lujo">
+                    </div>
+                    <div class="card-body">
+                        <h3>El Gran Salón</h3>
+                        <div class="card-rule"></div>
+                        <p>El corazón de la residencia como escenario de vida. Sofás de arquitectura limpia, alfombras de textura rica y arte seleccionado crean un espacio que invita a habitar con intención.</p>
+                    </div>
+                </article>
+
+                <article class="card reveal">
+                    <div class="card-number">02</div>
                     <div class="card-img-wrapper">
                         <img src="images/kitchen.png" alt="Cocina de diseño abierta integrada">
                     </div>
@@ -89,8 +121,8 @@
                     </div>
                 </article>
 
-                <article class="card">
-                    <div class="card-number">02</div>
+                <article class="card reveal">
+                    <div class="card-number">03</div>
                     <div class="card-img-wrapper">
                         <img src="images/bedroom.png" alt="Dormitorio principal de lujo">
                     </div>
@@ -101,19 +133,46 @@
                     </div>
                 </article>
 
-                <article class="card">
-                    <div class="card-number">03</div>
+                <article class="card reveal">
+                    <div class="card-number">04</div>
                     <div class="card-img-wrapper">
-                        <img src="images/coffeestation.png" alt="Estación de café de lujo boutique">
+                        <img src="images/coffeestation.png" alt="Estación de café boutique de lujo">
                     </div>
                     <div class="card-body">
                         <h3>El Ritual del Café</h3>
                         <div class="card-rule"></div>
-                        <p>Cada rincón de la residencia merece intención. Estantes de madera natural, iluminación cálida y una organización impecable que convierten el primer momento del día en una experiencia de cinco estrellas.</p>
+                        <p>Cada rincón de la residencia merece intención. Estantes de madera natural, iluminación cálida y organización impecable que elevan el primer momento del día a una experiencia de cinco estrellas.</p>
                     </div>
                 </article>
 
             </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Quote -->
+    <section class="manifesto">
+        <div class="manifesto-inner reveal">
+            <div class="manifesto-ornament">❧</div>
+            <blockquote>
+                <p>"El lujo no es tener más cosas.<br>Es no necesitar nada que no te dé placer."</p>
+                <cite>— Coco Chanel</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Contact / Newsletter -->
+    <section class="contact" id="contacto">
+        <div class="contact-inner reveal">
+            <div class="section-label">Mantente Inspirado</div>
+            <h2 class="section-title">Únete a la<br><em>Comunidad AURA</em></h2>
+            <p class="contact-subtitle">Recibe editoriales exclusivas de diseño, guías de estilo y acceso anticipado a nuestras colecciones curadas — directamente en tu bandeja de entrada.</p>
+            <form class="contact-form" id="newsletter-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Tu dirección de correo" required autocomplete="email">
+                    <button type="submit" class="btn-submit">Suscribirse</button>
+                </div>
+                <p class="form-disclaimer">Sin spam. Solo distinción. Cancela cuando quieras.</p>
+            </form>
         </div>
     </section>
 
@@ -126,6 +185,11 @@
         <div class="footer-rule"></div>
         <div class="footer-bottom">
             <p>&copy; 2026 AURA Interiorismo. Diseñado con propósito y pasión.</p>
+            <div class="footer-links">
+                <a href="#inspiracion">Inspiración</a>
+                <a href="#nosotros">Filosofía</a>
+                <a href="#estilos">Espacios</a>
+            </div>
             <p class="footer-credits">Inspirado en Architectural Digest · Elle Decor · Wallpaper*</p>
         </div>
     </footer>
