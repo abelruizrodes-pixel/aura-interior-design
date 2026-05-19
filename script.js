@@ -1,35 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Add loaded class to hero for subtle zoom animation
+
+    // Hero zoom-out on load
     setTimeout(() => {
         document.querySelector('.hero').classList.add('loaded');
     }, 100);
 
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
+    // Navbar: scrolled state
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(245, 242, 236, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
-        } else {
-            navbar.style.background = 'rgba(245, 242, 236, 0.8)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
 
-    // Intersection Observer for scroll animations (fade in sections)
+    // Intersection Observer — reveal cards and philosophy on scroll
+    const revealEls = document.querySelectorAll('.card, .philosophy-inner, .philosophy-stats, .section-header');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.12 });
 
-    document.querySelectorAll('.card, .philosophy .container').forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(40px)';
-        el.style.transition = 'all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1)';
+    revealEls.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(36px)';
+        el.style.transition = `opacity 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.1}s, transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.1}s`;
         observer.observe(el);
     });
+
+    // When revealed class is added, animate in
+    const styleTag = document.createElement('style');
+    styleTag.textContent = `.revealed { opacity: 1 !important; transform: translateY(0) !important; }`;
+    document.head.appendChild(styleTag);
+
 });

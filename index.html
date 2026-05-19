@@ -3,78 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA | Interiorismo y Lujo Accesible</title>
-    <meta name="description" content="Descubre lo mejor del diseño de interiores de Europa y USA. Lujo impecable diseñado para la clase media y trabajadora.">
+    <title>AURA — Interiorismo de Distinción</title>
+    <meta name="description" content="AURA. Diseño de interiores de alto nivel para el hogar moderno. Elegancia accesible inspirada en las mejores publicaciones de diseño del mundo.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="#inspiracion" class="nav-link">Inspiración</a>
+            <a href="#nosotros" class="nav-link">Filosofía</a>
+        </div>
         <div class="logo">AURA</div>
-        <ul class="nav-links">
-            <li><a href="#inspiracion">Inspiración</a></li>
-            <li><a href="#nosotros">Filosofía</a></li>
-            <li><a href="#estilos">Estilos</a></li>
-        </ul>
+        <div class="nav-right">
+            <a href="#estilos" class="nav-link">Espacios</a>
+            <a href="#estilos" class="nav-cta">Descubrir</a>
+        </div>
     </nav>
 
+    <!-- Hero -->
     <header class="hero" id="inspiracion">
         <div class="hero-image" style="background-image: url('images/hero.png')"></div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-up">Eleva tu Hogar.</h1>
-            <p class="fade-in-up delay-1">Transforma cualquier espacio en un refugio de sofisticación. Diseño inteligente, lujo impecable y accesible para tu día a día.</p>
-            <a href="#estilos" class="btn fade-in-up delay-2">Descubrir Espacios</a>
+            <span class="hero-eyebrow fade-in-up">Interiorismo · Distinción · Vida</span>
+            <h1 class="fade-in-up delay-1">Eleva<br><em>tu Hogar.</em></h1>
+            <div class="hero-divider fade-in-up delay-2"></div>
+            <p class="fade-in-up delay-3">Un espacio bien diseñado no es un lujo — es una necesidad. Transformamos cada rincón de tu residencia en una expresión de refinamiento sin concesiones.</p>
+            <a href="#estilos" class="btn fade-in-up delay-4">Descubrir Espacios</a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Desliza</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
+    <!-- Philosophy -->
     <section class="philosophy" id="nosotros">
-        <div class="container">
-            <h2 class="section-title">Cada Espacio,<br><em>una Obra de Arte</em></h2>
-            <p class="section-subtitle">Vivir bien no es un privilegio, es una decisión. Extraemos las mejores lecciones de interiorismo de Architectural Digest y Elle Decor para que optimices tu hogar con paletas neutras, iluminación estratégica y muebles de líneas limpias. Convertimos cada metro cuadrado en pura elegancia.</p>
-        </div>
-    </section>
-
-    <section class="styles" id="estilos">
-        <div class="container">
-            <h2 class="section-title">Espacios <em>Curados</em></h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="images/kitchen.png" alt="Cocina de Condominio Integrada">
-                    </div>
-                    <div class="card-body">
-                        <h3>Cocinas de Diseño</h3>
-                        <p>La cocina abierta al salón cobra vida propia. Con taburetes de arquitectura limpia, acentos de mármol y lámparas focales cálidas logramos un resultado de revista sin intervención estructural.</p>
-                    </div>
+        <div class="philosophy-inner">
+            <div class="philosophy-label">Nuestra Filosofía</div>
+            <h2 class="section-title">Cada Metro Cuadrado,<br><em>una Declaración de Estilo</em></h2>
+            <div class="philosophy-rule"></div>
+            <p class="section-subtitle">Vivir bien no es un privilegio, es una decisión. Extraemos las mejores lecciones de Architectural Digest y Elle Decor para que tu hogar refleje quién eres: sofisticado, consciente y sin igual. Paletas neutras, iluminación estratégica y muebles de líneas impecables que convierten el espacio cotidiano en algo extraordinario.</p>
+            <div class="philosophy-stats">
+                <div class="stat">
+                    <span class="stat-number">340+</span>
+                    <span class="stat-label">Hogares Transformados</span>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="images/bedroom.png" alt="Dormitorio Principal de Condominio">
-                    </div>
-                    <div class="card-body">
-                        <h3>Santuario del Descanso</h3>
-                        <p>El dormitorio principal se convierte en un refugio de ensueño. Ropa de cama de alto gramaje, alfombras texturizadas e iluminación ambiental tenue crean una atmósfera digna de las mejores suites.</p>
-                    </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Años de Distinción</span>
                 </div>
-                <div class="card">
-                    <div class="card-img-wrapper">
-                        <img src="images/coffeestation.png" alt="Estación de Café de Lujo">
-                    </div>
-                    <div class="card-body">
-                        <h3>El Ritual del Café</h3>
-                        <p>Cada rincón de tu hogar merece intención. Estantes de madera natural, iluminación cálida y una organización impecable transforman el primer momento del día en una experiencia de cinco estrellas.</p>
-                    </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Diseño con Propósito</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Styles / Cards -->
+    <section class="styles" id="estilos">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Espacios Curados</div>
+                <h2 class="section-title">La Residencia<br><em>Perfectamente Vivida</em></h2>
+            </div>
+            <div class="grid">
+
+                <article class="card">
+                    <div class="card-number">01</div>
+                    <div class="card-img-wrapper">
+                        <img src="images/kitchen.png" alt="Cocina de diseño abierta integrada">
+                    </div>
+                    <div class="card-body">
+                        <h3>Cocinas de Diseño</h3>
+                        <div class="card-rule"></div>
+                        <p>La cocina abierta cobra vida propia. Taburetes de arquitectura limpia, acentos de mármol y lámparas focales cálidas que convierten cada preparación en un ritual de elegancia.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-number">02</div>
+                    <div class="card-img-wrapper">
+                        <img src="images/bedroom.png" alt="Dormitorio principal de lujo">
+                    </div>
+                    <div class="card-body">
+                        <h3>Santuario del Descanso</h3>
+                        <div class="card-rule"></div>
+                        <p>El dormitorio principal como refugio de ensueño. Ropa de cama de alto gramaje, alfombras texturizadas e iluminación ambiental que crean atmósferas dignas de las mejores suites del mundo.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-number">03</div>
+                    <div class="card-img-wrapper">
+                        <img src="images/coffeestation.png" alt="Estación de café de lujo boutique">
+                    </div>
+                    <div class="card-body">
+                        <h3>El Ritual del Café</h3>
+                        <div class="card-rule"></div>
+                        <p>Cada rincón de la residencia merece intención. Estantes de madera natural, iluminación cálida y una organización impecable que convierten el primer momento del día en una experiencia de cinco estrellas.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <div class="container footer-content">
+        <div class="footer-top">
             <div class="footer-logo">AURA</div>
+            <p class="footer-tagline"><em>Refinamiento sin concesiones.</em></p>
+        </div>
+        <div class="footer-rule"></div>
+        <div class="footer-bottom">
             <p>&copy; 2026 AURA Interiorismo. Diseñado con propósito y pasión.</p>
+            <p class="footer-credits">Inspirado en Architectural Digest · Elle Decor · Wallpaper*</p>
         </div>
     </footer>
 
