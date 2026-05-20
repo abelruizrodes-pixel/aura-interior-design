@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Other reveal elements
-    document.querySelectorAll('.philosophy-inner, .manifesto-inner, .contact-inner, .section-header').forEach(el => {
+    document.querySelectorAll('.reveal:not(.card)').forEach(el => {
         observer.observe(el);
     });
 
