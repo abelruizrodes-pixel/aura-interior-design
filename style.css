@@ -669,6 +669,134 @@ footer {
 .footer-credits { font-style: italic; }
 
 /* ============================================
+   DESIGNER PROFILE
+   ============================================ */
+.designer-profile {
+    padding: 9rem 0 0;
+    background: var(--cream);
+}
+
+.designer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.designer-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.designer-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(24, 22, 15, 0.08);
+}
+
+.designer-content {
+    padding: 2rem 0;
+}
+
+/* ============================================
+   GALLERY SECTION
+   ============================================ */
+.gallery-section {
+    padding: 9rem 0;
+    background: var(--white);
+}
+
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    color: var(--ink);
+}
+
+.tab-btn.active {
+    color: var(--ink);
+    border-bottom-color: var(--gold);
+}
+
+.gallery-pane {
+    display: none;
+    animation: fadeInTab 0.8s var(--ease-luxury) forwards;
+}
+
+.gallery-pane.active {
+    display: block;
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream-dark);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-luxury);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(24,22,15,0.7), transparent);
+    color: var(--white);
+    padding: 2rem 1.5rem 1.5rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 .fade-in-up {
@@ -703,6 +831,8 @@ footer {
    ============================================ */
 @media (max-width: 1024px) {
     .grid { grid-template-columns: 1fr 1fr; }
+    .designer-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -713,6 +843,7 @@ footer {
     .nav-left, .nav-right { display: none; }
 
     .grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
 
     .philosophy-stats {
         flex-direction: column;

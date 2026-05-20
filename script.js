@@ -39,6 +39,23 @@ document.addEventListener("DOMContentLoaded", () => {
         marquee.addEventListener('mouseleave', () => marquee.style.animationPlayState = 'running');
     }
 
+    // ── Gallery Tabs ───────────────────────────────────
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.gallery-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active from all
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+
+            // Add active to clicked
+            btn.classList.add('active');
+            const targetId = `tab-${btn.dataset.tab}`;
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+
 });
 
 // ── Newsletter form ───────────────────────────────────
