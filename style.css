@@ -627,6 +627,25 @@ footer {
     opacity: 0.75;
 }
 
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-socials a {
+    color: var(--white);
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: var(--gold);
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
 .footer-rule {
     width: 100%; height: 1px;
     background: rgba(255,255,255,0.07);
