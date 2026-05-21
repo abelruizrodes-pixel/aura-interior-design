@@ -156,14 +156,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ── Subtle Hero Parallax Scroll ────────────────────
-    const heroImage = document.querySelector('.hero-image');
-    if (heroImage) {
+    const heroWrapper = document.querySelector('.hero-parallax-wrapper');
+    if (heroWrapper) {
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             if (scrollY < window.innerHeight) {
                 // Disable transform transition inline style to prevent lag/stiffness
-                heroImage.style.transition = 'none';
-                heroImage.style.transform = `translate3d(0, ${scrollY * 0.48}px, 0) scale(1.02)`;
+                heroWrapper.style.transition = 'none';
+                heroWrapper.style.transform = `translate3d(0, ${scrollY * 0.48}px, 0)`;
             }
         }, { passive: true });
     }

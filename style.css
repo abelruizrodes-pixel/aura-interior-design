@@ -171,19 +171,33 @@ img { display: block; max-width: 100%; }
     overflow: hidden;
 }
 
-.hero-image {
+.hero-parallax-wrapper {
     position: absolute;
     top: -15%; left: 0;
     width: 100%; height: 130%;
-    background-size: cover;
-    background-position: center;
     z-index: 0;
-    filter: brightness(0.52) saturate(0.88);
-    transform: scale(1.08);
-    transition: transform 12s ease-out;
+    overflow: hidden;
 }
 
-.hero.loaded .hero-image { transform: scale(1.02); }
+.hero-image {
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.52) saturate(0.88);
+    animation: dollyOutLoop 32s ease-in-out infinite;
+}
+
+@keyframes dollyOutLoop {
+    0% {
+        transform: scale(1.15) translate3d(0, 0, 0);
+    }
+    50% {
+        transform: scale(1.02) translate3d(0, 3%, 0);
+    }
+    100% {
+        transform: scale(1.15) translate3d(0, 0, 0);
+    }
+}
 
 .hero-overlay {
     position: absolute; inset: 0;
