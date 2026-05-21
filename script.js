@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (scrollY < window.innerHeight) {
                 // Disable transform transition inline style to prevent lag/stiffness
                 heroImage.style.transition = 'none';
-                heroImage.style.transform = `translate3d(0, ${scrollY * 0.28}px, 0)`;
+                heroImage.style.transform = `translate3d(0, ${scrollY * 0.48}px, 0) scale(1.02)`;
             }
         }, { passive: true });
     }

@@ -172,16 +172,18 @@ img { display: block; max-width: 100%; }
 }
 
 .hero-image {
-    position: absolute; inset: 0;
+    position: absolute;
+    top: -15%; left: 0;
+    width: 100%; height: 130%;
     background-size: cover;
     background-position: center;
     z-index: 0;
     filter: brightness(0.52) saturate(0.88);
-    transform: scale(1.06);
+    transform: scale(1.08);
     transition: transform 12s ease-out;
 }
 
-.hero.loaded .hero-image { transform: scale(1); }
+.hero.loaded .hero-image { transform: scale(1.02); }
 
 .hero-overlay {
     position: absolute; inset: 0;
