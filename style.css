@@ -173,8 +173,8 @@ img { display: block; max-width: 100%; }
 
 .hero-parallax-wrapper {
     position: absolute;
-    top: -15%; left: 0;
-    width: 100%; height: 130%;
+    top: -12%; left: 0;
+    width: 100%; height: 124%;
     z-index: 0;
     overflow: hidden;
 }
@@ -184,19 +184,12 @@ img { display: block; max-width: 100%; }
     background-size: cover;
     background-position: center;
     filter: brightness(0.52) saturate(0.88);
-    animation: dollyOutLoop 12s ease-in-out infinite;
+    transform: scale(1.08);
+    transition: transform 6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes dollyOutLoop {
-    0% {
-        transform: scale(1.75) translate3d(0, -6%, 0);
-    }
-    50% {
-        transform: scale(1.06) translate3d(0, 6%, 0);
-    }
-    100% {
-        transform: scale(1.75) translate3d(0, -6%, 0);
-    }
+.hero.loaded .hero-image {
+    transform: scale(1.02);
 }
 
 .hero-overlay {
