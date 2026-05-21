@@ -184,18 +184,18 @@ img { display: block; max-width: 100%; }
     background-size: cover;
     background-position: center;
     filter: brightness(0.52) saturate(0.88);
-    animation: dollyOutLoop 32s ease-in-out infinite;
+    animation: dollyOutLoop 12s ease-in-out infinite;
 }
 
 @keyframes dollyOutLoop {
     0% {
-        transform: scale(1.15) translate3d(0, 0, 0);
+        transform: scale(1.75) translate3d(0, -6%, 0);
     }
     50% {
-        transform: scale(1.02) translate3d(0, 3%, 0);
+        transform: scale(1.06) translate3d(0, 6%, 0);
     }
     100% {
-        transform: scale(1.15) translate3d(0, 0, 0);
+        transform: scale(1.75) translate3d(0, -6%, 0);
     }
 }
 
